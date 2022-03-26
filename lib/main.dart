@@ -3,6 +3,9 @@ import 'package:untitled4/widget/button_widget.dart';
 import 'package:untitled4/widget/column_widget.dart';
 import 'package:untitled4/widget/constranbox.dart';
 import 'package:untitled4/widget/container_widget.dart';
+import 'package:untitled4/widget/gird_view_widget.dart';
+import 'package:untitled4/widget/image_widget.dart';
+import 'package:untitled4/widget/listview_widget.dart';
 import 'package:untitled4/widget/row_widget.dart';
 import 'package:untitled4/widget/stack_widget.dart';
 import 'package:untitled4/widget/text_widget.dart';
@@ -21,7 +24,6 @@ import 'package:untitled4/widget/text_widget.dart';
 /// Trong stateless chỉ có duy nhất 1 class dùng để build widget như ví dụ dưới đây
 class ExempleStateless extends StatelessWidget {
   const ExempleStateless({Key key}) : super(key: key);
-
 
   ///đây chính là hàm kế thừa dùng để buld widget
   @override
@@ -44,7 +46,6 @@ class ExempleStatefull extends StatefulWidget {
 
 ///Còn đây sẽ là class dùng để build Widget
 class _ExempleStatefullState extends State<ExempleStatefull> {
-
   ///Trong này sẽ có vòng đời của nó (Tớ nói những hàm hay dùng thôi,thực tế nhiều hàm nhưng không dùng hoặc ít dùng đến)
   ///
   /// Hàm đầu tiên khi ứng dụng build 1 màn hình lên sẽ là [initState]
@@ -84,9 +85,7 @@ class _ExempleStatefullState extends State<ExempleStatefull> {
     return Scaffold(
       body: InkWell(
         // Within the `FirstRoute` widget
-        onTap: () {
-
-        },
+        onTap: () {},
         child: Center(
           child: Text('next'),
         ),
@@ -101,9 +100,9 @@ class Demo {
   final WidgetBuilder builder;
 
   const Demo({
-     this.name,
-     this.route,
-     this.builder,
+    this.name,
+    this.route,
+    this.builder,
   });
 }
 
@@ -136,9 +135,20 @@ final basicDemos = [
       name: 'ButtonWidget',
       route: ButtonWidget.routeName,
       builder: (context) => ButtonWidget()),
+  Demo(
+      name: 'ImageWidget',
+      route: ImageWidget.routeName,
+      builder: (context) => ImageWidget()),
+  Demo(
+      name: 'ListViewWidget',
+      route: ListViewWidget.routeName,
+      builder: (context) => ListViewWidget()),Demo(
+      name: 'GirdWidget',
+      route: GirdWidget.routeName,
+      builder: (context) => GirdWidget()),
 ];
 final basicDemoRoutes =
-Map.fromEntries(basicDemos.map((d) => MapEntry(d.route, d.builder)));
+    Map.fromEntries(basicDemos.map((d) => MapEntry(d.route, d.builder)));
 
 final allRoutes = <String, WidgetBuilder>{
   ...basicDemoRoutes,
@@ -188,7 +198,7 @@ class HomePage extends StatelessWidget {
 class DemoTile extends StatelessWidget {
   final Demo demo;
 
-  const DemoTile({ this.demo, Key key}) : super(key: key);
+  const DemoTile({this.demo, Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -200,4 +210,3 @@ class DemoTile extends StatelessWidget {
     );
   }
 }
-
