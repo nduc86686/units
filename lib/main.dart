@@ -6,6 +6,7 @@ import 'package:untitled4/widget/container_widget.dart';
 import 'package:untitled4/widget/gird_view_widget.dart';
 import 'package:untitled4/widget/image_widget.dart';
 import 'package:untitled4/widget/listview_widget.dart';
+import 'package:untitled4/widget/response_widget.dart';
 import 'package:untitled4/widget/row_widget.dart';
 import 'package:untitled4/widget/stack_widget.dart';
 import 'package:untitled4/widget/text_widget.dart';
@@ -142,10 +143,15 @@ final basicDemos = [
   Demo(
       name: 'ListViewWidget',
       route: ListViewWidget.routeName,
-      builder: (context) => ListViewWidget()),Demo(
+      builder: (context) => ListViewWidget()),
+  Demo(
       name: 'GirdWidget',
       route: GirdWidget.routeName,
       builder: (context) => GirdWidget()),
+  Demo(
+      name: 'ResponseWidget',
+      route: ResponseWidget.routeName,
+      builder: (context) => ResponseWidget()),
 ];
 final basicDemoRoutes =
     Map.fromEntries(basicDemos.map((d) => MapEntry(d.route, d.builder)));
