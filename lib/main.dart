@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled4/widget/animation.dart';
 import 'package:untitled4/widget/button_widget.dart';
 import 'package:untitled4/widget/column_widget.dart';
 import 'package:untitled4/widget/constranbox.dart';
@@ -151,7 +152,10 @@ final basicDemos = [
   Demo(
       name: 'ResponseWidget',
       route: ResponseWidget.routeName,
-      builder: (context) => ResponseWidget()),
+      builder: (context) => ResponseWidget()),  Demo(
+      name: 'AnimationWidget',
+      route: AnimationWidget.routeName,
+      builder: (context) => AnimationWidget()),
 ];
 final basicDemoRoutes =
     Map.fromEntries(basicDemos.map((d) => MapEntry(d.route, d.builder)));
