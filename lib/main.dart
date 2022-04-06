@@ -9,6 +9,7 @@ import 'package:untitled4/widget/image_widget.dart';
 import 'package:untitled4/widget/listview_widget.dart';
 import 'package:untitled4/widget/response_widget.dart';
 import 'package:untitled4/widget/row_widget.dart';
+import 'package:untitled4/widget/share_presenter.dart';
 import 'package:untitled4/widget/stack_widget.dart';
 import 'package:untitled4/widget/text_widget.dart';
 
@@ -152,10 +153,15 @@ final basicDemos = [
   Demo(
       name: 'ResponseWidget',
       route: ResponseWidget.routeName,
-      builder: (context) => ResponseWidget()),  Demo(
+      builder: (context) => ResponseWidget()),
+  Demo(
       name: 'AnimationWidget',
       route: AnimationWidget.routeName,
       builder: (context) => AnimationWidget()),
+  Demo(
+      name: 'SharePreSenter',
+      route: SharePreSenter.routeName,
+      builder: (context) => SharePreSenter()),
 ];
 final basicDemoRoutes =
     Map.fromEntries(basicDemos.map((d) => MapEntry(d.route, d.builder)));
